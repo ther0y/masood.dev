@@ -1,0 +1,30 @@
+.navbar button {
+    @apply text-lg text-center ml-4 text-grey-600 focus:outline-none select-none relative;
+    border-radius: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navbar a {
+    @apply select-none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.navbar button::after {
+    content: ' ';
+    width: 0;
+    height: 2px;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transition: all 0.25s ease-in-out;
+    @apply bg-black;
+}
+
+.navbar button.active {
+    @apply text-grey-900 border-grey-900 !important;
+}
+
+.navbar button.active::after {
+    width: 100%;
+    left:0
+}
