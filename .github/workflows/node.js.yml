@@ -19,7 +19,7 @@ jobs:
       - name: install-project-deps
         run: npm ci
       - name: build
-        run: gatsby build
+        run: npm run build
       - name: deploy
         env:
           LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
