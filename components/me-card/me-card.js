@@ -54,7 +54,7 @@ export const MeCard = () => {
           <button
             disabled
             className="text-sm bg-grey-900 text-white font-bold sm:w-1/2 flex items-center justify-center px-4 py-2 mb-1.5">
-            Resume <span>▼</span>
+            Resume <span className="pl-2 pt-0.5 app-text-xs">▼</span>
           </button>
         </animated.div>
       </div>

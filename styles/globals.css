@@ -20,3 +20,7 @@ h1 {
 h2 {
     @apply text-xl font-bold;
 }
+
+.app-text-xs {
+    font-size: 12px;
+}
