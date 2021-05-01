@@ -5,7 +5,8 @@ export const Avatar = ({ className }) => {
     <Image
       src="/images/me.png"
       alt="Picture of the author"
-      layout="fill"
+      width={128}
+      height={128}
       className={className}
       priority
     />
