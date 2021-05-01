@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "liara deploy --api-token=$LIARA_TOKEN --region=$LIARA_REGION --app=$LIARA_APP --detach"
   },
   "dependencies": {
     "install": "^0.13.0",
