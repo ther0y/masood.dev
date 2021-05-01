@@ -13,6 +13,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
       - name: update-liara
+        run: |
+          echo Installing Liara CLI
+          sudo npm i -g @liara/cli@2
       - name: install-project-deps
         run: npm ci
       - name: build
@@ -22,4 +25,7 @@ jobs:
           LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
           LIARA_REGION: ${{ secrets.LIARA_REGION }}
           LIARA_APP: ${{ secrets.LIARA_APP }}
-        run: npm run deploy
+        run: |
+          cd public
+          liara deploy --api-token="$LIARA_TOKEN" --region="$LIARA_REGION" --app="$LIARA_APP" --detach
+

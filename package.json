@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "deploy": "liara deploy --api-token=$LIARA_TOKEN --region=$LIARA_REGION --app=$LIARA_APP --detach"
+    "start": "next start"
   },
   "dependencies": {
     "install": "^0.13.0",
@@ -17,7 +16,6 @@
     "react-spring": "^8.0.27"
   },
   "devDependencies": {
-    "@liara/cli": "^2.7.0",
     "autoprefixer": "^10.2.5",
     "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.3.0",
