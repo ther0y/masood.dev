@@ -1,22 +1,22 @@
-import React from "react";
+import React from 'react';
 import NavbarCSS from './navbar.module.css';
-import {ActivatableLink} from "../activatable-link/activatable-link";
+import { ActivatableLink } from '../activatable-link/activatable-link';
 
 export function Navbar() {
   return (
     <nav className={NavbarCSS.navbar}>
       <ActivatableLink href="/" activeClass={NavbarCSS.active}>
-        <button >Home</button>
+        <button>Home</button>
       </ActivatableLink>
       <ActivatableLink href="/blog" activeClass={NavbarCSS.active}>
         <button>Blog</button>
       </ActivatableLink>
-      <a href="">
+      <ActivatableLink href="/about" activeClass={NavbarCSS.active}>
         <button>About</button>
-      </a>
-      <a href="">
+      </ActivatableLink>
+      <ActivatableLink href="/contact" activeClass={NavbarCSS.active}>
         <button>Contact</button>
-      </a>
+      </ActivatableLink>
     </nav>
   );
 }
