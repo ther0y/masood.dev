@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 body {
     @apply text-grey-900;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
 }
 
 .blue-to-indigo-gradient {
