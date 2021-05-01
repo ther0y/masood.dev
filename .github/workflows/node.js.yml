@@ -3,22 +3,19 @@ on:
   push:
     branches: [main]
 jobs:
-  deploy:
+  release:
+    name: Create Release
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "12"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
       - name: update-liara
         run: |
           echo Installing Liara CLI
           npm i -g @liara/cli@2
-      - name: install-gatsby-cli
-        run: |
-          echo Installing Gatsby CLI
-          npm i -g gatsby-cli
       - name: install-project-deps
         run: npm ci
       - name: build
