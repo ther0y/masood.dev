@@ -13,9 +13,6 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v1
       - name: update-liara
-        run: |
-          echo Installing Liara CLI
-          npm i @liara/cli@2
       - name: install-project-deps
         run: npm ci
       - name: build
