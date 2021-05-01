@@ -16,10 +16,6 @@ jobs:
         run: |
           echo Installing Liara CLI
           sudo npm i -g @liara/cli
-      - name: install-project-deps
-        run: npm ci
-      - name: build
-        run: npm run build
       - name: deploy
         env:
           LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
