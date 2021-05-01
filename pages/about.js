@@ -1,9 +1,12 @@
 import { UnderConstruction } from '../components/under-construction';
+import { Layout } from '../layouts/layout';
 
 export default function About() {
   return (
-    <main>
-      <UnderConstruction />
-    </main>
+    <Layout title="About">
+      <main>
+        <UnderConstruction />
+      </main>
+    </Layout>
   );
 }
