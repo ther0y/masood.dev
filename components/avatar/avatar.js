@@ -7,6 +7,7 @@ export const Avatar = ({ className }) => {
       alt="Picture of the author"
       width={128}
       height={128}
+      layout="responsive"
       className={className}
       priority
     />
