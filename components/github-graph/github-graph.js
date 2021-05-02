@@ -7,7 +7,7 @@ function GithubGraph() {
     <div className="mx-8 sm:mx-auto">
       <img
         className={classes.wrapper + ' '}
-        src="http://ghchart.rshah.org/ther0y"
+        src="https://ghchart.rshah.org/ther0y"
         height={120}
         width={700}
         alt="Masood's Github chart"
