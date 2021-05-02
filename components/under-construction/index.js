@@ -2,7 +2,7 @@ import { Spring } from 'react-spring/renderprops-universal.cjs';
 
 export const UnderConstruction = () => {
   return (
-    <div className="flex flex-col flex-grow items-center justify-center m-36">
+    <div className="flex flex-col flex-grow items-center justify-center">
       <Spring
         from={{ x: 100, m1: 300, m2: 434 }}
         to={{ x: 0, m1: 506, m2: 324 }}>

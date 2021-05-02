@@ -9,14 +9,16 @@ export const Layout = ({ props, children, title }) => {
         <title>Masood | {title}</title>
       </Head>
       <div className="min-h-screen flex">
-        <div className="flex flex-col flex-1 max-w-6xl mx-auto p-10 my-24">
-          <header className="flex justify-between">
+        <div className="flex flex-col flex-1">
+          <header className="flex flex-col sm:flex-row justify-center sm:justify-between items-center container mx-auto p-8">
             <Link href="/">
-              <div className="text-lg font-black cursor-pointer">MR.</div>
+              <div className="text-lg font-black cursor-pointer mb-3 sm:mb-0">
+                MR.
+              </div>
             </Link>
             <Navbar />
           </header>
-          {children}
+          <div className="m-auto pb-24">{children}</div>
         </div>
       </div>
     </div>
