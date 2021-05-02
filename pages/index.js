@@ -1,6 +1,5 @@
 import { MeCard } from '../components/me-card/me-card';
 import { Layout } from '../layouts/layout';
-import Image from 'next/image';
 import GithubGraph from '../components/github-graph/github-graph';
 
 export default function Home() {

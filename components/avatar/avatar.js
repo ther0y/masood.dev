@@ -1,13 +1,10 @@
-import Image from 'next/image';
-
 export const Avatar = ({ className }) => {
   return (
-    <Image
+    <img
       src="/images/me.png"
-      alt="Picture of the author"
+      alt="Masood's Avatar"
       width={128}
       height={128}
-      layout="responsive"
       className={className}
     />
   );
