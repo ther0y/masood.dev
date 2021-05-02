@@ -9,7 +9,6 @@ export const Avatar = ({ className }) => {
       height={128}
       layout="responsive"
       className={className}
-      priority
     />
   );
 };
