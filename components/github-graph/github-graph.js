@@ -11,6 +11,7 @@ function GithubGraph() {
         height={120}
         width={700}
         alt="Masood's Github chart"
+        draggable={false}
       />
     </div>
   );
