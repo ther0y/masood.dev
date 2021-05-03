@@ -19,7 +19,7 @@ export const Layout = ({ props, children, title }) => {
             </Link>
             <Navbar />
           </header>
-          <div className="m-auto pb-24">{children}</div>
+          {children}
         </div>
       </div>
     </div>
