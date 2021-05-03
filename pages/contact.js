@@ -4,7 +4,7 @@ import { Layout } from '../layouts/layout';
 export default function Contact() {
   return (
     <Layout title="Contact">
-      <main>
+      <main className="m-auto pb-24">
         <UnderConstruction />
       </main>
     </Layout>

@@ -4,7 +4,7 @@ import { Layout } from '../layouts/layout';
 export default function Blog() {
   return (
     <Layout title="Blog">
-      <main>
+      <main className="m-auto pb-24">
         <UnderConstruction />
       </main>
     </Layout>
