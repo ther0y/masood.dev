@@ -40,9 +40,17 @@ pre[class*="language-"] {
 }
 
 /* Inline code */
-:not(pre) > code[class*="language-"] {
-    padding: .1em;
-    border-radius: .3em;
+:not(pre) > code {
+  padding: 0.2em 0.3em;
+  border-radius: 0.3em;
+  background: #1f2a37;
+  top: 1px;
+  position: relative;
+  color: #dacf85 !important;
+
+  &:before, &:after {
+    content: '' !important;
+  }
 }
 
 .token.comment,
