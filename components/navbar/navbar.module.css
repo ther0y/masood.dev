@@ -1,7 +1,15 @@
 .navbar button {
-    @apply text-lg text-center ml-4 text-grey-600 focus:outline-none select-none relative;
+    @apply text-lg text-center mx-2 text-grey-600 focus:outline-none select-none relative;
     border-radius: 0;
     -webkit-tap-highlight-color: transparent;
+}
+
+.navbar button:first-child {
+    @apply ml-0;
+}
+
+.navbar button:last-child {
+    @apply mr-0;
 }
 
 .navbar a {
