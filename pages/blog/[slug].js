@@ -3,13 +3,14 @@ import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 import { getAllPosts } from '../../_content/blog-data';
 import { Layout } from '../../layouts/layout';
+import mdxPrism from 'mdx-prism';
 
 function BlogPost({ data, content }) {
   const mdxContent = hydrate(content);
 
   return (
     <Layout>
-      <div className="container mx-auto md:px-8">
+      <div className="container mx-auto md:px-8 prose">
         <h1>{data.title}</h1>
         <h4>{data.date}</h4>
         {mdxContent}
@@ -26,13 +27,12 @@ export async function getStaticProps(context) {
     (post) => post.data.slug === params.slug
   );
 
-  const mdxSource = await renderToString(content);
-  console.log({
-    data: {
-      ...data,
-      date: data.date.toISOString()
-    },
-    content
+  console.log(mdxPrism);
+
+  const mdxSource = await renderToString(content, {
+    mdxOptions: {
+      rehypePlugins: [mdxPrism]
+    }
   });
   return {
     props: {

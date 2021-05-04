@@ -8,7 +8,7 @@ export function Navbar() {
       <ActivatableLink href="/" activeClass={NavbarCSS.active}>
         <button>Home</button>
       </ActivatableLink>
-      <ActivatableLink href="/blog" activeClass={NavbarCSS.active}>
+      <ActivatableLink href="/blog" activeClass={NavbarCSS.active} include>
         <button>Blog</button>
       </ActivatableLink>
       <ActivatableLink href="/about" activeClass={NavbarCSS.active}>
