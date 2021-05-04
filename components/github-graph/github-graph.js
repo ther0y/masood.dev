@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import classes from './github-graph.module.css';
+import classes from './github-graph.module.scss';
 
 function GithubGraph() {
   return (

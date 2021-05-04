@@ -1,6 +1,6 @@
 ---
-    title: My First Post
-    slug: first-post
+    title: Sample Post
+    slug: sample-post
     date: 2021-05-03T13:15:05.583Z
 ---
 
@@ -22,5 +22,4 @@
     "undefined": "^0.1.0"
   }
 }
-
 ```
