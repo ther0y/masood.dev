@@ -49,3 +49,16 @@ export function getAllPostsPaths() {
     }
   }));
 }
+
+export function getAllPostsParsed() {
+  // eslint-disable-next-line no-undef
+  return Promise.all(
+    getAllPosts().map(async (post) => {
+      const content = await renderToString(post.content);
+      return {
+        data: post.data,
+        content
+      };
+    })
+  );
+}

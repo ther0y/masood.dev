@@ -1,18 +1,12 @@
 import React from 'react';
-import hydrate from 'next-mdx-remote/hydrate';
 import { findPostBySlug, getAllPostsPaths } from '../../_content/blog-data';
 import { Layout } from '../../layouts/layout';
+import BlogPost from '../../components/blog-post/blog-post';
 
-export default function BlogPost({ data, content }) {
-  const mdxContent = hydrate(content);
-
+export default function BlogPostPage(post) {
   return (
-    <Layout title={data.title}>
-      <div className="container mx-auto md:px-8 prose">
-        <h1>{data.title}</h1>
-        <h4>{data.date}</h4>
-        {mdxContent}
-      </div>
+    <Layout title={post.data.title}>
+      <BlogPost post={post} />
     </Layout>
   );
 }
