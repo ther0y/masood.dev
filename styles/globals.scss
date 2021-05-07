@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     @apply text-grey-900;
     font-family: "Open Sans", sans-serif;
@@ -15,11 +19,16 @@ body {
 }
 
 h1 {
-    @apply text-2xl font-bold;
+    @apply text-2xl font-semibold
 }
 
 h2 {
-    @apply text-xl font-bold;
+    @apply text-xl font-semibold
+}
+
+h3 {
+  @apply text-lg font-semibold;
+  font-size: 20px;
 }
 
 pre {
@@ -28,4 +37,13 @@ pre {
 
 .app-text-xs {
     font-size: 12px;
+}
+
+.prose-sm {
+  position: relative;
+  top: -1.6em;
+}
+
+.prose-sm > :first-child {
+  margin-top: 1.6em !important;
 }
