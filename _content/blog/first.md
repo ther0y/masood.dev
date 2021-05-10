@@ -4,7 +4,7 @@
     date: 2021-05-03T13:15:05.583Z
 ---
 
-### Hello Blog!
+### Hello Blog
 -----
 This is how this page is rendered using `Next.js`
 ```javascript
