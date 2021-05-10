@@ -9,6 +9,7 @@ function GithubGraph() {
         height={120}
         width={700}
         alt="Masood's Github chart"
+        loading="lazy"
         draggable={false}
       />
       <h4 className="mt-1 text-sm text-gray-400">
