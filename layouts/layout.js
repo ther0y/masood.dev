@@ -7,6 +7,10 @@ export const Layout = ({ props, children, title }) => {
     <div {...props}>
       <Head>
         <title>Masood | {title}</title>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500&display=swap"
+        />
       </Head>
       <div className="min-h-screen flex">
         <div className="flex flex-col flex-1">
