@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set environments
+        run: echo "CURRENT_DATE=$(date +%Y-%m-%d_%H%M%S-utc)" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup Node.js
@@ -25,9 +27,11 @@ jobs:
           FANDOGH_USERNAME: ${{ secrets.FANDOGH_USERNAME }}
           FANDOGH_PASSWORD: ${{ secrets.FANDOGH_PASSWORD }}
           APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          IMAGE_VERSION: "v$GITHUB_RUB_ID-$CURRENT_TIME"
         run: |
           yes | fandogh login --username="$FANDOGH_USERNAME" --password="$FANDOGH_PASSWORD"
           fandogh image init --name="$FANDOGH_SERVICE_NAME"
-          fandogh image publish --version="$GITHUB_SHA"
-          fandogh service deploy --image="$FANDOGH_SERVICE_NAME" --version="$GITHUB_SHA" --name="$FANDOGH_SERVICE_NAME" --port 3000 --hosts="$APP_DOMAIN"
+          fandogh image publish --version="$IMAGE_VERSION"
+          fandogh service deploy --image="$FANDOGH_SERVICE_NAME" --version="$IMAGE_VERSION" --name="$FANDOGH_SERVICE_NAME" --port 3000 --hosts="$APP_DOMAIN"
 
