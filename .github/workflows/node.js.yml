@@ -25,7 +25,7 @@ jobs:
           FANDOGH_USERNAME: ${{ secrets.FANDOGH_USERNAME }}
           FANDOGH_PASSWORD: ${{ secrets.FANDOGH_PASSWORD }}
           APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
-          IMAGE_VERSION: ${{ job.container.id }}
+          IMAGE_VERSION: ${{ "v" + GITHUB_RUN_ID }}
         run: |
           yes | fandogh login --username="$FANDOGH_USERNAME" --password="$FANDOGH_PASSWORD"
           fandogh image init --name="$FANDOGH_SERVICE_NAME"
