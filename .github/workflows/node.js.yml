@@ -26,8 +26,8 @@ jobs:
           FANDOGH_PASSWORD: ${{ secrets.FANDOGH_PASSWORD }}
           APP_DOMAIN: ${{ secrets.APP_DOMAIN }}
         run: |
-          fandogh login --username="$FANDOGH_USERNAME" --password="$FANDOGH_PASSWORD" &&
-          fandogh image init --name="$FANDOGH_SERVICE_NAME" &&
-          fandogh image publish --version="$GITHUB_SHA" &&
+          yes | fandogh login --username="$FANDOGH_USERNAME" --password="$FANDOGH_PASSWORD"
+          fandogh image init --name="$FANDOGH_SERVICE_NAME"
+          fandogh image publish --version="$GITHUB_SHA"
           fandogh service deploy --image="$FANDOGH_SERVICE_NAME" --version="$GITHUB_SHA" --name="$FANDOGH_SERVICE_NAME" --port 3000 --hosts="$APP_DOMAIN"
 
