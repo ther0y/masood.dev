@@ -1,10 +1,9 @@
-import { Layout } from '../layouts/layout';
-import { getAllPostsParsed } from '../_content/blog-data';
-import hydrate from 'next-mdx-remote/hydrate';
+import { getAllPostsParsed } from '../../_content/blog-data';
+import { Layout } from '../../layouts/layout';
 import Link from 'next/link';
 
 export default function Blog({ posts }) {
-  const Posts = posts.map(({ data, content }) => {
+  const Posts = posts.map(({ data }) => {
     return (
       <div
         className="rounded-sm shadow-md border border-grey-200"
@@ -18,7 +17,9 @@ export default function Blog({ posts }) {
             <a>
               <div className="absolute right-5 text-sm text-blue-400 font-semibold">
                 read more
-                <span className="text-md font-bold relative top-px left-1">></span>
+                <span className="text-md font-bold relative top-px left-1">
+                  {'>'}
+                </span>
               </div>
             </a>
           </Link>
@@ -35,7 +36,6 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-  // eslint-disable-next-line no-undef
   return {
     props: {
       posts: await getAllPostsParsed()

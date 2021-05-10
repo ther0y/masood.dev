@@ -1,7 +1,6 @@
 import { Navbar } from '../components/navbar/navbar';
 import Link from 'next/link';
 import Head from 'next/head';
-import React from 'react';
 
 export const Layout = ({ props, children, title }) => {
   return (

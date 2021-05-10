@@ -1,4 +1,4 @@
-import React from 'react';
+import { cloneElement } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -14,5 +14,5 @@ export const ActivatableLink = ({ href, children, activeClass, include }) => {
     className = `${className} ${activeClass}`;
   }
 
-  return <Link href={href}>{React.cloneElement(children, { className })}</Link>;
+  return <Link href={href}>{cloneElement(children, { className })}</Link>;
 };

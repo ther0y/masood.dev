@@ -1,6 +1,5 @@
 import { animated, useSpring, useTrail } from 'react-spring';
 import { Avatar } from '../avatar/avatar';
-import React from 'react';
 import SocialLinks from '../social-links/social-links';
 
 export const MeCard = () => {

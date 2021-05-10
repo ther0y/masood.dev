@@ -1,4 +1,3 @@
-import React from 'react';
 import { animated, useTrail } from 'react-spring';
 
 function SocialLinks(props) {

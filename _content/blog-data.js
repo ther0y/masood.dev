@@ -28,7 +28,7 @@ export function getAllPosts() {
 }
 
 export async function findPostBySlug(slug) {
-  const post = getAllPosts().find((post) => post.data.slug === slug);
+  const post = getAllPosts().find((p) => p.data.slug === slug);
 
   const mdxSource = await renderToString(post.content, {
     mdxOptions: {
@@ -51,7 +51,6 @@ export function getAllPostsPaths() {
 }
 
 export function getAllPostsParsed() {
-  // eslint-disable-next-line no-undef
   return Promise.all(
     getAllPosts().map(async (post) => {
       const content = await renderToString(post.content);

@@ -1,10 +1,9 @@
-import React from 'react';
 import hydrate from 'next-mdx-remote/hydrate';
 
 import classes from './blog-post.module.scss';
 
 function BlogPost({ post }) {
-  const { data, content } = post;
+  const { content } = post;
   const mdxContent = hydrate(content);
 
   return (

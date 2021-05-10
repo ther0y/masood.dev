@@ -1,4 +1,3 @@
-import React from 'react';
 import { findPostBySlug, getAllPostsPaths } from '../../_content/blog-data';
 import { Layout } from '../../layouts/layout';
 import BlogPost from '../../components/blog-post/blog-post';

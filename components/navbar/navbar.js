@@ -1,4 +1,3 @@
-import React from 'react';
 import NavbarCSS from './navbar.module.scss';
 import { ActivatableLink } from '../activatable-link/activatable-link';
 
