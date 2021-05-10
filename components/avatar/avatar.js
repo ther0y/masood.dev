@@ -8,8 +8,7 @@ export const Avatar = ({ className }) => {
       width={128}
       height={128}
       className={className}
-      priority={true}
-      loading="eager"
+      unoptimized={true}
       draggable={false}
     />
   );
