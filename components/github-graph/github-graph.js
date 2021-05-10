@@ -10,7 +10,6 @@ function GithubGraph() {
         width={700}
         alt="Masood's Github chart"
         draggable={false}
-        loading="lazy"
       />
       <h4 className="mt-1 text-sm text-gray-400">
         Github activity graph |{' '}
