@@ -1,4 +1,5 @@
 module.exports = {
+  swcMinify: true,
   future: {
     webpack5: true
   },
