@@ -1,4 +1,10 @@
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {
+  MotionValue,
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { useEffect, useRef } from "react";
 
 import React from "react";
@@ -162,6 +168,72 @@ const getOpacityByDepth = (depth: number, variant: "home" | "play") => {
   }
 };
 
+// Define a custom hook to handle the transform logic
+function useSquareTransform(
+  springX: MotionValue<number>,
+  springY: MotionValue<number>,
+  multiplier: number
+) {
+  const x = useTransform(
+    springX,
+    (latest: number) => latest * -100 * multiplier
+  );
+  const y = useTransform(
+    springY,
+    (latest: number) => latest * -100 * multiplier
+  );
+  return { x, y };
+}
+
+// Square component to handle individual squares
+function Square({
+  square,
+  springX,
+  springY,
+  variant,
+  index,
+}: {
+  square: (typeof squares)[0];
+  springX: MotionValue<number>;
+  springY: MotionValue<number>;
+  variant: "home" | "play";
+  index: number;
+}) {
+  const shapeClass = variant === "play" ? "rounded-full" : "rounded-lg";
+  const colorClass =
+    variant === "home"
+      ? square.depth === 1.0
+        ? "bg-gray-400"
+        : square.depth === 0.7
+        ? "bg-gray-300"
+        : square.depth === 0.4
+        ? "bg-gray-200"
+        : "bg-gray-100"
+      : "";
+
+  const { x, y } = useSquareTransform(springX, springY, square.multiplier);
+
+  return (
+    <motion.div
+      key={index}
+      className={`absolute ${shapeClass} ${colorClass}`}
+      style={{
+        x,
+        y,
+        left: square.x,
+        top: square.y,
+        width: `${square.size * 4}px`,
+        height: `${square.size * 4}px`,
+        rotate: `${square.rotate}deg`,
+        opacity: getOpacityByDepth(square.depth, variant),
+        ...(variant === "play" && {
+          backgroundColor: cyberpunkColors[index % cyberpunkColors.length],
+        }),
+      }}
+    />
+  );
+}
+
 export function FloatingSquares({ variant = "home" }: FloatingSquaresProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
@@ -200,48 +272,19 @@ export function FloatingSquares({ variant = "home" }: FloatingSquaresProps) {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
-  // Create transforms for each square with different movement multipliers
-  const createSquareTransform = (multiplier: number = 1) => ({
-    x: useTransform(springX, (latest) => latest * -100 * multiplier),
-    y: useTransform(springY, (latest) => latest * -100 * multiplier),
-  });
-
   return (
     <div ref={containerRef} className="pointer-events-none absolute inset-0">
       <div className="relative h-full w-full">
-        {squares.map((square, index) => {
-          const shapeClass = variant === "play" ? "rounded-full" : "rounded-lg";
-          const colorClass =
-            variant === "home"
-              ? square.depth === 1.0
-                ? "bg-gray-400"
-                : square.depth === 0.7
-                ? "bg-gray-300"
-                : square.depth === 0.4
-                ? "bg-gray-200"
-                : "bg-gray-100"
-              : "";
-
-          return (
-            <motion.div
-              key={index}
-              className={`absolute ${shapeClass} ${colorClass}`}
-              style={{
-                ...createSquareTransform(square.multiplier),
-                left: square.x,
-                top: square.y,
-                width: `${square.size * 4}px`,
-                height: `${square.size * 4}px`,
-                rotate: `${square.rotate}deg`,
-                opacity: getOpacityByDepth(square.depth, variant),
-                ...(variant === "play" && {
-                  backgroundColor:
-                    cyberpunkColors[index % cyberpunkColors.length],
-                }),
-              }}
-            />
-          );
-        })}
+        {squares.map((square, index) => (
+          <Square
+            key={index}
+            square={square}
+            springX={springX}
+            springY={springY}
+            variant={variant}
+            index={index}
+          />
+        ))}
       </div>
     </div>
   );
