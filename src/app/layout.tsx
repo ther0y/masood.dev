@@ -4,7 +4,7 @@ import { Geist } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { Nav } from "@/components/nav";
+import { Nav } from "@/components/navs";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({

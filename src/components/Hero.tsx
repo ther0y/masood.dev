@@ -1,5 +1,4 @@
 import { FloatingSquares } from "./FloatingSquares";
-import Image from "next/image";
 import { MapPin } from "lucide-react";
 import React from "react";
 
@@ -18,7 +17,7 @@ export function Hero({ variant = "home" }: HeroProps) {
           <div className="space-y-4">
             <div className="flex items-center justify-center gap-4">
               <h1 className="cyberpunk-text font-semibold text-7xl tracking-tighter">
-                hi, i'm masood
+                hi, i&apos;m masood
               </h1>
             </div>
             <div className="flex items-center justify-center gap-2 text-gray-500">
@@ -52,7 +51,7 @@ export function Hero({ variant = "home" }: HeroProps) {
         <div className="space-y-4">
           <div className="flex items-center justify-center gap-4">
             <h1 className="black-gradient-h1 font-semibold text-7xl tracking-tighter">
-              hi, i'm masood
+              hi, i&apos;m masood
             </h1>
           </div>
           <div className="flex items-center justify-center gap-2 text-gray-500">
